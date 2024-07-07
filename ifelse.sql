@@ -19,7 +19,7 @@ BEGIN
 s1:=:a;
 s2:=:b;
 s3:=:c;
------single if statement
+-----case 1    single if statement
 if s1>33 then 
 dbms_output.put_line('pass hindi');
 end if;
@@ -31,5 +31,38 @@ end if;
 if s3>33 then
 dbms_output.put_line('pass english');
 end if;
+
+------case 2   if else statement
+if s1>33 then 
+dbms_output.put_line('pass hindi');
+else
+dbms_output.put_line('fail hindi');
+end if;
+
+if s2>33 then
+dbms_output.put_line('pass maths');
+else
+dbms_output.put_line('fail maths');
+end if;
+
+if s3>33 then
+dbms_output.put_line('pass english');
+else
+dbms_output.put_line('fail english');
+end if;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 END;
