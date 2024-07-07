@@ -14,6 +14,8 @@ Declare
 s1 number;
 s2 number;
 s3 number;
+s4 number;
+s5 number;
 
 BEGIN
 s1:=:a;
@@ -52,8 +54,22 @@ dbms_output.put_line('fail english');
 end if;
 
 
-
-
+--------case 3           nested if else
+if s1 is not null then
+if s2 is not null then
+if s3 is not null then
+s4:=s1+s2+s3;
+s5:=s4/3;
+dbms_output.put_line('total'||s4||'  '||'avg'||s5);
+else 
+dbms_output.put_line('english null');
+end if;
+else
+dbms_output.put_line('maths null');
+end if;
+else
+dbms_output.put_line('hindi null');
+end if;
 
 
 
