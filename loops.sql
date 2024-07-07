@@ -29,7 +29,7 @@ x number :=0;
 begin
 loop
 x:=x+1;
-if x<3 then continue;end if;
+if x<3 then continue;end if;----- for CONTINUE WHEN statetement, remove if and use           continue when x<3;
 dbms_output.put_line(x);
 exit when x>5;
 end loop;
