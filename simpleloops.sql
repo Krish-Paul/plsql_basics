@@ -34,3 +34,20 @@ dbms_output.put_line(x);
 exit when x>5;
 end loop;
 end;
+
+
+-----nested loop
+declare i number:=0;
+j number:=0;
+begin
+loop
+i:=i+1;
+j:=0;
+loop
+j:=j+1;
+dbms_output.put_line(i||' '||j);
+exit when j>=3;
+end loop;
+exit when i>=3;
+end loop;
+end;
