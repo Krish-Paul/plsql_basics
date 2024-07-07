@@ -22,3 +22,15 @@ x:=x+1;
 exit when x>10;
 end loop;
 end;
+
+-----simple loop with continue statement  
+declare
+x number :=0;
+begin
+loop
+x:=x+1;
+if x<3 then continue;end if;
+dbms_output.put_line(x);
+exit when x>5;
+end loop;
+end;
