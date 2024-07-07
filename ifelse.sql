@@ -71,7 +71,16 @@ else
 dbms_output.put_line('hindi null');
 end if;
 
-
+--case 4   else-if statement
+if s5>=90 then
+dbms_output.put_line('excellent');
+elsif s5>=70 and s5<90 then
+dbms_output.put_line('good');
+elsif s5>=40 and s5<70 then
+dbms_output.put_line('okk');
+elsif s5<40 then
+dbms_output.put_line('fail');
+end if;
 
 
 
