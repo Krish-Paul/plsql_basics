@@ -28,3 +28,18 @@ BEGIN
 END;
 
 
+----there are some exceptions defined in oracle which only have code anderror message but not any named. they are called unnamed exceptions. they can be named using PRAGMA_INIT
+DECLARE
+LARGE_VALUE  exception;
+PRAGMA EXCEPTION_INIT(LARGE_VALUE, -1438);
+BEGIN
+
+INSERT INTO SCOTT.emp  (EMPNO) VALUES (123432123312);
+
+
+EXCEPTION
+WHEN LARGE_VALUE THEN
+dbms_output.put_line('SQLCODE: '|| SQLCODE);
+dbms_output.put_line('SQLERRM: '|| SQLERRM);
+END;
+
