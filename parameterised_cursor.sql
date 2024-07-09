@@ -73,3 +73,26 @@ BEGIN
     CLOSE C1;
    
 END;
+
+
+
+
+
+
+
+
+
+------------using for loop   
+declare 
+cursor c1(id hr.employees.employee_id%type)is select first_name  from hr.employees where employee_id=id;
+begin
+for i in c1(102)loop
+dbms_output.put_line(i.first_name);
+end loop;
+for i in c1(103)loop
+dbms_output.put_line(i.first_name);
+end loop;
+for i in c1(104)loop
+dbms_output.put_line(i.first_name);
+end loop;
+end;
