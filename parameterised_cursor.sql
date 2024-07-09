@@ -35,7 +35,7 @@ BEGIN
    
 END;
 
-
+------more than 1 parameter
 DECLARE
 V_NAME  XX_EMP_TL.ENAME%TYPE;
 V_SAL XX_EMP_TL.SAL%TYPE;
