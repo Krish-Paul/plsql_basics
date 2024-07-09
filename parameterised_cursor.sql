@@ -4,7 +4,8 @@ V_NAME  XX_EMP_TL.ENAME%TYPE;
 V_SAL XX_EMP_TL.SAL%TYPE;
 
    --Declare Cursor for all dept  --
-  CURSOR C1(P_DEPTNO XX_EMP_TL.DEPTNO%TYPE) IS
+  CURSOR C1(P_DEPTNO XX_EMP_TL.DEPTNO%TYPE) IS------------for default value declaration the line would be 
+     ---- CURSOR C1(P_DEPTNO XX_EMP_TL.DEPTNO%TYPE default 10) IS
   SELECT Ename, sal FROM XX_EMP_TL where DEPTNO = P_DEPTNO;
  
 BEGIN
@@ -85,6 +86,7 @@ END;
 ------------using for loop   
 declare 
 cursor c1(id hr.employees.employee_id%type)is select first_name  from hr.employees where employee_id=id;
+---to declare default value use  cursor c1(id hr.employees.employee_id%type default 100)is select first_name  from hr.employees where employee_id=id;
 begin
 for i in c1(102)loop
 dbms_output.put_line(i.first_name);
