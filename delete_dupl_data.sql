@@ -1,3 +1,5 @@
+
+---delete duplicate elements when primary key is known
 create table XX_DELIVERY_DATA_TL (
     id number primary key,
     order_num  varchar2(500 byte),
@@ -26,3 +28,12 @@ DELETE XX_DELIVERY_DATA_TL A
 WHERE 1=1
 AND A.VENDer = 'Cun Mun'
 AND ID NOT IN ( SELECT MIN(ID) FROM XX_DELIVERY_DATA_TL Z WHERE A.VENDer = Z.VENder  GROUP BY ORDER_NUM, TRX_TYPE, VENDer,PROC );         
+
+
+
+-----when primary key is not there...delete using rowid
+delete from XX_DELIVERY_DATA_TL
+
+WHERE rowid NOT IN ( SELECT MIN(rowid) FROM XX_DELIVERY_DATA_TL GROUP BY ORDER_NUMBER, TRX_TYPE, VENDOR_CODE,PROCESS_FLAG );        
+
+
