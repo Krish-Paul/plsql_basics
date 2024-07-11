@@ -37,3 +37,12 @@ delete from XX_DELIVERY_DATA_TL
 WHERE rowid NOT IN ( SELECT MIN(rowid) FROM XX_DELIVERY_DATA_TL GROUP BY ORDER_NUMBER, TRX_TYPE, VENDOR_CODE,PROCESS_FLAG );        
 
 
+----find duplicate elements using rownum and partition by
+select * from (
+select --rownum,                                                                                                                             
+EMPNO , ENAME   , JOB    , MGR     , HIREDATE , SAL   , COMM , DEPTNO,
+ row_number ()
+ over (Partition by EMPNO , ENAME   , JOB    , MGR     , HIREDATE , SAL   , COMM , DEPTNO order by rownum) Record_Count
+from XX_EMP_DISTINCT_TL ) AA
+where AA.RECORD_COUNT = 1
+ 
