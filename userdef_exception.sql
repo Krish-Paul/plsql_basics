@@ -14,7 +14,7 @@ WHEN NOT_VALID_AGE THEN
     DBMS_OUTPUT.PUT_LINE ('You are not authorized for vote you are below 18 years');   
 END;
 
-----use raise_application_error statement
+----use raise_application_error statement 
 DECLARE
   V_Your_age   NUMBER:=16;
 BEGIN
